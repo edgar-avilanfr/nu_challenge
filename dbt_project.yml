@@ -39,7 +39,7 @@ models:
   nu_challenge1:
     # Applies to all files under models/example/
     balances_step2:
-      schema: nu_finance_bronze
+      schema: "{{ target.dataset }}nu_finance_bronze"
     balances_step3: 
-      schema: nu_finance_silver
+      schema: "{{ target.dataset }}nu_finance_silver"
 
