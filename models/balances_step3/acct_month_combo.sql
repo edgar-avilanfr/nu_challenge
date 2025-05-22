@@ -1,7 +1,9 @@
-{{ config(
-    materialized='table',
-    clustered_by=["account_id", "action_year","action_month"]
-) }}
+{{
+    config(
+        materialized="table",
+        clustered_by=["account_id", "action_year", "action_month"],
+    )
+}}
 
 with all_trans as (select * from {{ ref("all_trans_monthly_balance") }})
 
@@ -19,4 +21,3 @@ from
     ) as date_range
 left join (select distinct (account_id) from all_trans) as all_trans on 1 = 1
 order by 1, 2, 3
-
