@@ -1,3 +1,8 @@
+{{ config(
+    materialized='table',
+    clustered_by=["account_id", "year_month"]
+) }}
+
 with
     nonpix_agg as (select * from {{ ref("nonpix_trans_combined") }}),
     pix_agg as (select * from {{ ref("pix_trans_monthly_agg") }})
