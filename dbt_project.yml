@@ -38,8 +38,10 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   nu_challenge1:
     # Applies to all files under models/example/
+    balances_step1:
+      schema: "bronze"
     balances_step2:
-      schema: bronze
+      schema: "silver"
     balances_step3:
-      schema: silver
+      schema: "gold"
 
