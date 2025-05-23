@@ -1,0 +1,10 @@
+version : 2
+sources:
+  - name: staging_finance
+    database: developer3-457903
+    schema: staging_finance
+    tables:
+      - name: dim_customers
+      - name: dim_state
+      - name: dim_city
+      - name: dim_country
